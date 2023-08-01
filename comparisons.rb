@@ -97,15 +97,16 @@ age = 1
 
 # YOU DO:
 # Determine if the dog loves to play and loves treats
-
+puts loves_to_play && loves_treats # true
 
 # Determine if the dog loves to play and loves the dog park
-
+puts loves_to_play && loves_dog_park # false
 
 # Determine if the dog loves to play or loves the dog park
-
+puts loves_to_play || loves_dog_park # true
 
 # Determine if the dog loves to play and is a puppy
+puts loves_to_play && age <= 1 # true
 
 # What did your final line of code evaluate to? Why do you think that is? Explain.
-# ANSWER:
+# ANSWER: true -- I determined that a puppy is 1 years old or less.  My boolean expression evaluates to true because puppers loves to play and is 1 yrs.
