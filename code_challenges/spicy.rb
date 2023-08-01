@@ -1,20 +1,28 @@
-# Requirements
 # Write a Ruby program that prints out a String or Integer: The printed value will depend on the value of an Integer. If the Integer is a multiple of 3, print "Fizz". If the Integer is a multiple of 5, print "Buzz". If the Integer is a multiple of both 3 and 5, print "FizzBuzz". If the Integer is not a multiple of either, print the Integer itself.
+#
+#
+require 'test/unit'
 
-
-def spicy_runner(spciy_int)
-  if spciy_int % 3 == 0 && spciy_int % 5 == 0
+def spicy_runner(spicy_int)
+  if spicy_int % 3 == 0 && spicy_int % 5 == 0
     return "FizzBuzz"
-  elsif spciy_int % 3 == 0
+  elsif spicy_int % 3 == 0
     return "Fizz"
-  elsif spciy_int % 5 == 0
+  elsif spicy_int % 5 == 0
     return "Buzz"
   else
-    return "Your spciy_int is #{spciy_int}"
+    return spicy_int.to_s
   end
 end
 
-puts spicy_runner(15)
-puts spicy_runner(20)
-puts spicy_runner(9)
-puts spicy_runner(7)
+
+puts spicy_runner(3) # => "Fizz"
+puts spicy_runner(5) # => "Buzz"
+puts spicy_runner(15) # => "FizzBuzz"
+puts spicy_runner(7) # => "7"
+
+class TestSpicyRunner < Test::Unit::TestCase
+  def test_spicy_runner
+    assert spicy_runner(3) == "Fizz"
+  end
+end
